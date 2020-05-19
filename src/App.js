@@ -23,7 +23,7 @@ fetch('https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=
           const dayArr = data.sol_keys
           const weatherArr = []
           
-           for (let i=1; i<dayArr.length; i++) {
+           for (let i=0; i<dayArr.length; i++) {
              let sol = dayArr[i]
              weatherArr.push({
               day: sol, 
