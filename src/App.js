@@ -12,7 +12,7 @@ class Mars extends React.Component {
 
 
 componentDidMount() {
-  let dayArray = []
+  // let dayArray = []
 
    //Fetch test data from the NASA Open APIs and display information on the screen:
 fetch('https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0',{
@@ -51,24 +51,27 @@ const {weather} = this.state
     return (
       <div className="App">
         <header>
-          <div>
             <h1>MARS</h1>
             <h2>Weather Watch</h2>
-          </div>
         </header>
   {/* Create the weather data cards */}
         <section>
 
           {weather.map(d => {
-            // console.log(d)
+            // change the first letter of the season to uppercase
+            let string = d.season
+            const season = (string) => {
+              return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+              
             return(
               <article key={d.day}>
                 <h3>Day: SOL {d.day}</h3>
                   <ul>
-                    <li>Temperature: {d.temperature}</li>
-                    <li>Wind Speed: {d.wind}</li>
+                    <li>Temperature: {d.temperature} &#8451;</li>
+                    <li>Wind Speed: {d.wind} m/s</li>
                     <li>Wind Direction: {d.direction}</li>
-                    <li>Season: {d.season}</li>
+                    <li>Season: {season(string)}</li>
                   </ul>
               </article>
             )
