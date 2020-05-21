@@ -41,9 +41,6 @@ fetch('https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=
        })
 }
 
-
- 
-
 render() {
 const {weather} = this.state    
 // console.log(`This is what is in the render: ${weather}`)
