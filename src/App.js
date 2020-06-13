@@ -6,7 +6,8 @@ class Mars extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      weather: []
+      weather: [],
+      loading: true
     }
   }
 
@@ -51,6 +52,7 @@ const {weather} = this.state
             <h1>MARS</h1>
             <h2>Weather Watch</h2>
         </header>
+
   {/* Create the weather data cards */}
         <section>
 
